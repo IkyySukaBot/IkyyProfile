@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Card website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body, html {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-image: url('https://files.catbox.moe/2n0qqe.jpg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .card {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 15px;
+            animation: pulseBorder 1.5s infinite alternate;
+        }
+        @keyframes pulseBorder {
+            from {
+                border-color: #007bff;
+            }
+            to {
+                border-color: #0056b3;
+            }
+        }
+        .card-img-top {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin: 15px auto;
+        }
+        .btn {
+            width: 100%;
+            margin-bottom: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            border-color: #007bff;
+            transition: all 0.3s ease;
+            display: block; /* Ensure buttons stack vertically */
+            text-align: left; /* Align text to the left */
+            padding: 10px; /* Add padding for better readability */
+        }
+        .btn i {
+            margin-right: 10px; /* Add space between icon and text */
+        }
+        .btn:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .verified-badge {
+            color: #1da1f2;
+            margin-left: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            background-color: #f8f9fa;
+            padding: 10px 0;
+            width: 100%;
+        }
+        #buttons-container {
+            display: none; /* Start by hiding the buttons container */
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="card text-center">
+            <img src="https://files.catbox.moe/0lla4n.png" class="card-img-top" alt="profile">
+            <div class="card-body">
+                <h5 class="card-title">RexxzynXD <i class="fas fa-check-circle verified-badge"></i></h5>
+                <p class="card-text">Hubungi saya</p>
+                <div id="buttons-container"></div>
+            </div>
+            <div class="card-footer text-muted">
+                <i class="fas fa-map-marker-alt"></i> Bekasi, Indonesia
+            </div>
+            <!-- Initial button to trigger fetching and displaying buttons -->
+            <button onclick="playAudio()" class="btn" id="playButton">≡ Lihat Link</button>
+        </div>
+    </div>
+
+    <footer>&copy; Hak Cipta 2024 | RexxzynXD</footer>
+
+    <!-- Script to play audio and fetch buttons from JSON -->
+    <script>
+        // Script to play audio and fetch buttons from JSON
+        function playAudio() {
+            var audio = document.getElementById('linkmp3');
+            audio.play();
+            
+            // Fetch data from isi.json
+            fetch('isi.json')
+                .then(response => response.json())
+                .then(data => {
+                    // Get buttons container
+                    var buttonsContainer = document.getElementById('buttons-container');
+                    // Clear previous buttons
+                    buttonsContainer.innerHTML = '';
+
+                    // Create buttons from JSON data and append them
+                    data.buttons.forEach(button => {
+                        var btn = document.createElement('a');
+                        btn.setAttribute('href', button.link);
+                        btn.setAttribute('class', 'btn');
+                        btn.setAttribute('target', '_blank'); // Open link in new tab
+
+                        // Create icon element
+                        var icon = document.createElement('i');
+                        icon.setAttribute('class', button.icon);
+                        btn.appendChild(icon);
+
+                        // Create text span element
+                        var textSpan = document.createElement('span');
+                        textSpan.textContent = button.title;
+                        btn.appendChild(textSpan);
+
+                        buttonsContainer.appendChild(btn);
+                    });
+
+                    // Display buttons container after initial button is clicked
+                    buttonsContainer.style.display = 'block';
+
+                    // Show card footer after initial button is clicked
+                    var cardFooter = document.querySelector('.card-footer');
+                    cardFooter.style.display = 'block';
+
+                    // Hide the initial button after it's clicked
+                    var playButton = document.getElementById('playButton');
+                    playButton.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error fetching JSON:', error);
+                });
+        }
+    </script>
+
+    <!-- Audio tag for nightchanges.mp3 file from GitHub -->
+    <audio src="https://cdn.jsdelivr.net/gh/feeldreams/feeldreams.github.io/audio/nightchanges.mp3" id="linkmp3" class="hidden"></audio>
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{
+    "buttons": [
+        {
+            "title": "Github",
+            "link": "https://github.com/RexxHayanasi",
+            "icon": "fab fa-github"
+        },
+        {
+            "title": "Youtube",
+            "link": "https://youtube.com/@rexxzynxd",
+            "icon": "fab fa-youtube"
+        },
+        {
+            "title": "Website Personal",
+            "link": "https://rexxzyn.vercel.app",
+            "icon": "fab fa-google"
+        },
+        {
+            "title": "Instagram",
+            "link": "https://instagram.com/rexxzynxd",
+            "icon": "fab fa-instagram"
+        },
+        {
+            "title": "Telegram",
+            "link": "http://t.me/rexxzynxd",
+            "icon": "fab fa-telegram"
+        },
+        {
+            "title": "Store Website",
+            "link": "https://rexxzynstore.vercel.app/#products",
+            "icon": "fas fa-rocketchat"
+        },
+        {
+            "title": "WhatsApp",
+            "link": "https://wa.me/message/IFCA2G2YF6EEG1",
+            "icon": "fab fa-whatsapp"
+        }
+    ]
+}
