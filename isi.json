@@ -6,14 +6,19 @@
             "icon": "fab fa-github"
         },
         {
+            "title": "WhatsApp 1",
+            "link": "https://wa.me/6281246493375",
+            "icon": "fab fa-whatsapp"
+        },
+        {
+            "title": "WhatsApp 2",
+            "link": "https://wa.me/6281248845231",
+            "icon": "fab fa-whatsapp"
+        },
+        {
             "title": "Youtube",
             "link": "https://youtube.com/@IkyyTzy_",
             "icon": "fab fa-youtube"
-        },
-        {
-            "title": "Website Personal",
-            "link": "https://rexxzyn.vercel.app",
-            "icon": "fab fa-google"
         },
         {
             "title": "Instagram",
@@ -21,19 +26,14 @@
             "icon": "fab fa-instagram"
         },
         {
-            "title": "Telegram",
+            "title": "Telegram 1",
             "link": "http://t.me/IkyyOfficialz",
             "icon": "fab fa-telegram"
         },
         {
-            "title": "Store Website",
-            "link": "https://rexxzynstore.vercel.app/#products",
-            "icon": "fas fa-rocketchat"
-        },
-        {
-            "title": "WhatsApp",
-            "link": "https://wa.me/6281246493375",
-            "icon": "fab fa-whatsapp"
+            "title": "Telegram 2",
+            "link": "http://t.me/ikyybtz",
+            "icon": "fab fa-telegram"
         }
     ]
 }
