@@ -1,11 +1,6 @@
 {
     "buttons": [
         {
-            "title": "Github",
-            "link": "https://github.com/IkyySukaBot",
-            "icon": "fab fa-github"
-        },
-        {
             "title": "WhatsApp 1",
             "link": "https://wa.me/6281246493375",
             "icon": "fab fa-whatsapp"
@@ -14,6 +9,21 @@
             "title": "WhatsApp 2",
             "link": "https://wa.me/6281248845231",
             "icon": "fab fa-whatsapp"
+        },
+        {
+            "title": "Telegram",
+            "link": "http://t.me/IkyyOfficialz",
+            "icon": "fab fa-telegram"
+        },
+        {
+            "title": "Telegram",
+            "link": "http://t.me/ikyybtz",
+            "icon": "fab fa-telegram"
+        },
+        {
+            "title": "Github",
+            "link": "https://github.com/IkyySukaBot",
+            "icon": "fab fa-github"
         },
         {
             "title": "Youtube",
@@ -26,14 +36,9 @@
             "icon": "fab fa-instagram"
         },
         {
-            "title": "Telegram 1",
-            "link": "http://t.me/IkyyOfficialz",
-            "icon": "fab fa-telegram"
-        },
-        {
-            "title": "Telegram 2",
-            "link": "http://t.me/ikyybtz",
-            "icon": "fab fa-telegram"
+            "title": "Tiktok",
+            "link": "https://tiktok.com/@kyybtz",
+            "icon": "fab fa-tiktok"
         }
     ]
 }
